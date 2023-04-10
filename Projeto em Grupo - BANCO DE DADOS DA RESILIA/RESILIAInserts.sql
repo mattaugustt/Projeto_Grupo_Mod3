@@ -1,19 +1,19 @@
 -- Feito por Lenilson
 INSERT INTO aluno VALUES
-(111,'Davi'),
-(222,'Stephanie'),
-(333,'Douglas'),
-(444,'Davi'),
-(555,'Matheus'),
-(666,'Lenilson');
+(111,'Davi de Moraes Novaes',219484848,'dmoraes@mail.com','Rua Carminha Dutra, n. 500'),
+(222,'Stephanie Ferreira Vale',219456565,'svale@mail.com','Rua Alfredo Raimundo, n. 650'),
+(333,'Douglas Klem Portugal do Amaral',219837363,'dkamaral@mail.com','Rua Bigode Respeitoso, n.220'),
+(444,'Márcio Lorenzo Alves',219837635,'mlorenzo@mail.com','Avenida Coronel Rodapé, n. 171'),
+(555,'Matheus Augusto de Souza',219878787,'mathaugusto@mail.com','Rua José Alves Lima, n. 130'),
+(666,'Lenilson dos Reis Barros',219047574,'lreis@mail.com','Estrada do Portela Nobre, n. 432');
 
 --Feito pela Stephanie
 INSERT INTO curso VALUES
-(01,'Banco de Dados','Noite'),
-(02,'Ciência da comunicação','Manhã'),
+(01,'Desenvolvimento Web','Noite'),
+(02,'Ciência da Comunicação','Manhã'),
 (03,'Informática','Tarde'),
 (04,'Redes de Computadores','Noite'),
-(05,'Engenharia da Computação','Noite'),
+(05,'Automatização com DevOps','Noite'),
 (06,'Sistemas de Informação','Tarde'),
 (07,'Análise de Dados','Manhã'),
 (08,'Excel Avançado','Tarde');
@@ -35,9 +35,9 @@ INSERT INTO modulo VALUES
 (1,'Python I',30,'SIM','NAO','NAO'),
 (2,'SQL',20,'SIM','SIM','SIM'),
 (3,'Soft Skills',70,'SIM','SIM','SIM'),
-(4,'Logica de Programação',10,'NAO','NAO','NAO'),
-(5,'Google Colab',25,'SIM','SIM','NAO'),
-(6,'Power Bi',40,'SIM','SIM','SIM');
+(4,'Lógica de Programação',10,'NAO','NAO','NAO'),
+(5,'Google Collab',25,'SIM','SIM','NAO'),
+(6,'Power BI',40,'SIM','SIM','SIM');
 
 --Feito por Davi
 INSERT INTO curso_modulo VALUES
@@ -52,16 +52,16 @@ INSERT INTO curso_modulo VALUES
 
 --Feito por Matheus
 INSERT INTO facilitador VALUES
-(1, 'Thiago', '(21)98463-8467', 'thiago@email.com', 'Rua das flores, n. 19'),
-(2, 'Edgard', '(11)94645-8888', 'edgard@email.com', 'Av. Luiz Rosa, n. 255'),
-(3, 'Sofia', '(12)97623-8743', 'sofia@email.com', 'Rua Fernando Barbosa, n. 450'),
-(4, 'Fátima', '(21)96473-8364', 'fatima@email.com', 'Av. Franco da Silva, n. 210'),
-(5, 'Bruna', '(22)98473-0293', 'bruna@email.com', 'Rua Nova York, n. 95'),
-(6, 'Fernando', '(22)95436-8695', 'fernando@email.com', 'Estrada do Galeão, n. 1954'),
-(7, 'Larissa', '(21)96453-9287', 'larissa@email.com', 'AV. Brigadeiro Fernando, n. 282'),
-(8, 'Monique', '(21)96583-6754', 'monique@email.com', 'Rua Professor Eduardo, n. 303'),
-(9, 'Lucas', '(21)94546-3254', 'lucas@email.com', 'Alameda do Sol, n. 203'),
-(10, 'Manuela', '(21)94547-2563', 'manuela@email.com', 'Condominio Boa Vista, apt. 512');
+(1, 'Thiago Leal', '21984638467', 'thiago@email.com', 'Rua das flores, n. 19',111),
+(2, 'Edgard Simas', '11946458888', 'edgard@email.com', 'Av. Luiz Rosa, n. 255',112),
+(3, 'Sofia Charlote', '12976238743', 'sofia@email.com', 'Rua Fernando Barbosa, n. 450',113),
+(4, 'Fátima Souza', '21964738364', 'fatima@email.com', 'Av. Franco da Silva, n. 210',112),
+(5, 'Bruna Marquelucia', '22984730293', 'bruna@email.com', 'Rua Nova York, n. 95',222),
+(6, 'Fernando Torquatto', '22954368695', 'fernando@email.com', 'Estrada do Galeão, n. 1954',221),
+(7, 'Larissa Manuelle', '21964539287', 'larissa@email.com', 'AV. Brigadeiro Fernando, n. 282',223),
+(8, 'Monique Evandra', '21965836754', 'monique@email.com', 'Rua Professor Eduardo, n. 303',333),
+(9, 'Lucas Meneguel', '21945463254', 'lucas@email.com', 'Alameda do Sol, n. 203',332),
+(10, 'Manuela Marques', '21945472563', 'manuela@email.com', 'Condominio Boa Vista, apt. 512',331);
 
 --Feito por Davi
 INSERT INTO modulo_facilitador VALUES
@@ -78,15 +78,13 @@ INSERT INTO modulo_facilitador VALUES
 
 --Feito por Douglas
 INSERT INTO departamento VALUES
-(111,'pedagógico','Soft',1),
-(112,'pedagógico','Hard',2),
-(113,'pedagógico','Coordenação',3),
-(112,'pedagógico','Hard',5),
-(111,'pedagógico','Soft',6),
-(111,'pedagógico','Coordenação',7),
-(222,'financeiro','Tesouraria',8),
-(222,'financeiro','Contabilidade',9),
-(222,'financeiro','Gestão de Contas',10),
-(333,'administrativo','Direção',5),
-(333,'administrativo','Recursos Humanos',6),
-(333,'administrativo','Controle de Qualidade',7);
+(111,'pedagógico','Soft'),
+(112,'pedagógico','Hard'),
+(113,'pedagógico','Coordenação'),
+(221,'financeiro','Tesouraria'),
+(222,'financeiro','Contabilidade'),
+(223,'financeiro','Gestão de Contas'),
+(331,'administrativo','Direção'),
+(332,'administrativo','Recursos Humanos'),
+(333,'administrativo','Controle de Qualidade');
+
