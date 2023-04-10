@@ -67,14 +67,14 @@ INSERT INTO facilitador VALUES
 INSERT INTO modulo_facilitador VALUES
 (3,1),
 (1,2),
-(2,3),
+(2,4),
 (4,4),
-(6,5),
-(6,6),
-(5,7),
-(4,8),
-(2,9),
-(1,10);
+(6,1),
+(6,2),
+(5,1),
+(4,2),
+(2,1),
+(1,4);
 
 --Feito por Douglas
 INSERT INTO departamento VALUES
