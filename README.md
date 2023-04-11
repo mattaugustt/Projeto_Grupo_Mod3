@@ -30,72 +30,79 @@ Portanto, nosso objetivo se resume em modelar e criar o banco de dados através 
 
 ### * 1: Construção do Banco de Dados ###
 
-Pela interface do próprio PgAdmin4 do PostgreSQL, foi executada a criação do BANCORESILIA e dispensando, nesse caso, o iniciador 'CREATE DATABASE <nome_banco_de_dados>' pelo Query Tool. Inicia-se a construção das tabelas de cada entidade pela expressão 'CREATE TABLE <nome_tabela>' seguida da inserção de seus respectivos campos, tipos e definição das chaves relacionadas conforme é mostrado abaixo:
+A criação do banco de dados RESILIA parte do iniciador 'CREATE DATABASE <nome_banco_de_dados>' pelo Query Tool. Inicia-se a construção das tabelas de cada entidade pela expressão 'CREATE TABLE <nome_tabela>' seguida da inserção de seus respectivos campos, tipos e definição das chaves relacionadas de acordo com a construção da
+modelagem feita previamente:
 
 ```sql
---BANCO DE DADOS BANCORESILIA--
+--Criação da Database--
+CREATE DATABASE RESILIA;
 --
---criação das tabelas para cada entidade--
+USE RESILIA;
 --
---entidade1--
-CREATE TABLE CADASTRO_EMPRESA(
-  CNPJ INTEGER NOT NULL PRIMARY KEY,
-  Nome VARCHAR(255),
-  Telefone INTEGER,
-  Endereco VARCHAR(255)
+CREATE TABLE aluno(
+id_aluno INT NOT NULL PRIMARY KEY,
+nome VARCHAR (50),
+telefone INT,
+email VARCHAR (50),
+endereco VARCHAR (50)
 );
 --
---entidade2--
-CREATE TABLE CADASTRO_TECNOLOGIA(
-  ID_Cad_Tec INTEGER NOT NULL PRIMARY KEY,
-  Nome VARCHAR(255),
-  Area VARCHAR(255)
+CREATE TABLE curso(
+id_curso INTEGER NOT NULL PRIMARY KEY,
+nome VARCHAR (100),
+turno VARCHAR (100)
 );
 --
---entidade3--
-CREATE TABLE RELATORIO(
-	ID_Relatorio INTEGER NOT NULL PRIMARY KEY,
-	Data_Compilacao DATE,
-	CNPJ INTEGER NOT NULL
-);
-ALTER TABLE RELATORIO
-ADD CONSTRAINT fk_CNPJ
-FOREIGN KEY (CNPJ)
-REFERENCES CADASTRO_EMPRESA(CNPJ);
---
---entidade4--
-CREATE TABLE CURSOS(
-  ID_Curso INTEGER NOT NULL PRIMARY KEY,
-  Nome VARCHAR(255),
-  CargaHoraria INTEGER,
-  Palestrante VARCHAR(255),
-  Turno VARCHAR(255),
-  Stack VARCHAR(255),
-  CNPJ INTEGER NOT NULL
-);
-ALTER TABLE CURSOS
-ADD CONSTRAINT fk_CNPJ
-FOREIGN KEY (CNPJ)
-REFERENCES CADASTRO_EMPRESA(CNPJ);
---
---entidade5--
-CREATE TABLE RELATORIO_TECNOLOGIA(
-	ID_Relatorio INTEGER NOT NULL,
-	ID_Cad_Tec INTEGER NOT NULL,
-	CONSTRAINT pk_RELATORIO_TECNOLOGIA PRIMARY KEY (ID_Relatorio, ID_Cad_Tec),
-	CONSTRAINT fk_ID_Relatorio FOREIGN KEY (ID_Relatorio) REFERENCES RELATORIO(ID_Relatorio),
-    CONSTRAINT fk_ID_Cad_Tec FOREIGN KEY (ID_Cad_Tec) REFERENCES CADASTRO_TECNOLOGIA(ID_Cad_Tec)
+CREATE TABLE aluno_curso(
+id_aluno INT NOT NULL,
+id_curso INT NOT NULL,
+id_matricula VARCHAR(20),
+frequencia_porcent INT,
+PRIMARY KEY (id_aluno,id_curso),
+FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno),
+FOREIGN KEY (id_curso) REFERENCES curso(id_curso)
 );
 --
---entidade6--
-CREATE TABLE EMPRESA_CURSOS(
-	CNPJ INTEGER NOT NULL,
-	ID_Curso INTEGER NOT NULL, 
-	CONSTRAINT pk_EMPRESA_CURSOS PRIMARY KEY (CNPJ, ID_Curso),
-	CONSTRAINT fk_CNPJ FOREIGN KEY (CNPJ) REFERENCES CADASTRO_EMPRESA(CNPJ),
-    CONSTRAINT fk_ID_Curso FOREIGN KEY (ID_Curso) REFERENCES CURSOS(ID_Curso)
+CREATE TABLE modulo(
+id_modulo INT NOT NULL PRIMARY KEY,
+nome VARCHAR (100),
+cargahoraria INT,
+proj_ind1 VARCHAR(5),
+proj_ind2 VARCHAR(5),
+proj_grup VARCHAR(5)
 );
 --
+CREATE TABLE curso_modulo(
+id_curso INT NOT NULL,
+id_modulo INT NOT NULL,
+PRIMARY KEY (id_curso,id_modulo),
+FOREIGN KEY (id_curso) REFERENCES curso(id_curso),
+FOREIGN KEY (id_modulo) REFERENCES modulo(id_modulo)
+);
+--
+CREATE TABLE departamento(
+id_departamento INTEGER NOT NULL PRIMARY KEY,
+nome VARCHAR (50),
+setor VARCHAR (50)
+);
+--
+CREATE TABLE facilitador(
+id_facilitador INT NOT NULL PRIMARY KEY,
+nome VARCHAR (50),
+telefone VARCHAR (20),
+email VARCHAR (50),
+endereco VARCHAR (50),
+id_departamento INTEGER NOT NULL,
+FOREIGN KEY (id_departamento) REFERENCES departamento(id_departamento)
+);
+--
+CREATE TABLE modulo_facilitador(
+id_modulo INT NOT NULL,
+id_facilitador INT NOT NULL,
+PRIMARY KEY (id_modulo,id_facilitador),
+FOREIGN KEY (id_modulo) REFERENCES modulo(id_modulo),
+FOREIGN KEY (id_facilitador) REFERENCES facilitador(id_facilitador)
+);
 --finalização das tabelas para cada entidade--
 ```
 
