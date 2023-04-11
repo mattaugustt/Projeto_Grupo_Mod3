@@ -11,7 +11,7 @@ Portanto, nosso objetivo se resume em modelar e criar o banco de dados através 
 
 ## Pastas e Arquivos ##
 
-**README.md**: arquivo que abriga uma breve descrição do projeto com o título, suas funcionalidades, arquivos presentes na pasta do projeto, seus respectivos comandos e informações da equipe responsável pelo desenvolvimento.
+* **README.md**: arquivo que abriga uma breve descrição do projeto com o título, suas funcionalidades, arquivos presentes na pasta do projeto, seus respectivos comandos e informações da equipe responsável pelo desenvolvimento.
 
 >>>Projeto em Grupo - BANCO DE DADOS DA RESILIA/
    >>>Arquivos SQL/
