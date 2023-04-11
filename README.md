@@ -1,3 +1,14 @@
+**Projeto em Grupo - Módulo 3** <br>
+Banco de Dados da Resilia. <br><br>
+**Integrantes do grupo** <br>
+Davi Novaes; <br>
+Douglas Klem; <br>
+Lenilson Barros; <br>
+Matheus Augusto; <br>
+Stephanie Vale. <br>
+**E-mails para contato:** <br>
+mataugusto1999@gmail.com <br>
+
 ## Descrição ##
 
 Este repositório (FAD-M3) contém os arquivos utilizados para disponibilizar a infraestrutura necessária para o projeto final em grupo do Módulo 3 (Banco de Dados e Relacionamento Interpessoal) do curso de Formação em Análise de Dados promovido pela parceria SENAC/Resilia.
