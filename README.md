@@ -109,91 +109,92 @@ FOREIGN KEY (id_facilitador) REFERENCES facilitador(id_facilitador)
 
 ### * 2: Registro no Banco de Dados ###
 
-Foram concebidos de forma fictícia registros para cada entidade existente afim de se checar o preenchimento das informações. No caso do número de empresas e das datas de compilação dos relatórios, atentou-se à restrição de 4 empresas e, pelo menos, 1 relatório para cada uma daquelas em cada semestre. As demais tabelas receberam quantiddades de cargas maiores ou condizentes com as primeiras cargas. Cada tabela teve o registo feito pela expressão 'INSERT INTO <nome_tabela> VALUES', respeitando a ordem na qual os campos foram criados anteriormente:
+Cada entidade recebeu registros de forma fictícia afim de se checar a integridade do preenchimento das informações. Cada tabela teve o registo feito pela expressão 'INSERT INTO <nome_tabela> VALUES', respeitando a ordem na qual os campos foram criados anteriormente:
 
 ```sql
---BANCO DE DADOS BANCORESILIA--
+--Início dos registros para popular o banco de dados--
 --
---início dos registros para popular o banco de dados--
+INSERT INTO aluno VALUES
+(111,'Davi de Moraes Novaes',219484848,'dmoraes@mail.com','Rua Carminha Dutra, n. 500'),
+(222,'Stephanie Ferreira Vale',219456565,'svale@mail.com','Rua Alfredo Raimundo, n. 650'),
+(333,'Douglas Klem Portugal do Amaral',219837363,'dkamaral@mail.com','Rua Bigode Respeitoso, n.220'),
+(444,'Márcio Lorenzo Alves',219837635,'mlorenzo@mail.com','Avenida Coronel Rodapé, n. 171'),
+(555,'Matheus Augusto de Souza',219878787,'mathaugusto@mail.com','Rua José Alves Lima, n. 130'),
+(666,'Lenilson dos Reis Barros',219047574,'lreis@mail.com','Estrada do Portela Nobre, n. 432');
 --
---registros da tabela 1--
-INSERT INTO CADASTRO_EMPRESA VALUES
-(77382821,'Statkraft',47240670,'Lilleakerveien 6, NO-0283 Oslo, Norway'),
-(22000049,'IBM Brasil',20031170,'Av. República do Chile, 330 Centro, RJ'),
-(01590944,'Itaú',20050005,'Rua Sete de Setembro 99a Centro, RJ'),
-(55558992,'EBANX',96123456,'Rua Marechal Deodoro, 630 Curitiba,PR');
+INSERT INTO curso VALUES
+(01,'Desenvolvimento Web','Noite'),
+(02,'Ciência da Comunicação','Manhã'),
+(03,'Informática','Tarde'),
+(04,'Redes de Computadores','Noite'),
+(05,'Automatização com DevOps','Noite'),
+(06,'Sistemas de Informação','Tarde'),
+(07,'Análise de Dados','Manhã'),
+(08,'Excel Avançado','Tarde');
 --
---registros da tabela 2--
-INSERT INTO CADASTRO_TECNOLOGIA VALUES
-(100,'JavaScript','Desenvolvimento Web'),
-(200,'Unity','Desenvolvimento de Jogos'),
-(300,'SQL','Dados'),
-(400,'Ruby','Desenvolvimento de Software'),
-(500,'Tableau','Dados'),
-(600,'TCP/IP','Infraestrutura de Redes'),
-(700, 'VPN','Segurança da Informação'),
-(800,'Oracle','Dados'),
-(900,'Unreal Engine','Desenvolvimento de Jogos');
+INSERT INTO aluno_curso VALUES
+(111,01,'435678',25),
+(222,02,'4567',100),
+(333,03,'234',100),
+(444,04,'45567',75),
+(555,08,'3444',45),
+(555,07,'3476',88),
+(666,05,'34566',95),
+(111,05,'34533',00),
+(222,01,'23455',65);
 --
---registros da tabela 3--
-INSERT INTO RELATORIO VALUES
-(11111,'2022-03-09',77382821),
-(22222,'2022-04-19',22000049),
-(33333,'2022-06-03',01590944),
-(44444,'2022-05-14',55558992),
-(77777,'2022-08-30',77382821),
-(88888,'2022-10-23',22000049),
-(99999,'2022-09-08',01590944),
-(10101,'2022-07-10',55558992);
+INSERT INTO modulo VALUES
+(1,'Python I',30,'SIM','NAO','NAO'),
+(2,'SQL',20,'SIM','SIM','SIM'),
+(3,'Soft Skills',70,'SIM','SIM','SIM'),
+(4,'Lógica de Programação',10,'NAO','NAO','NAO'),
+(5,'Google Collab',25,'SIM','SIM','NAO'),
+(6,'Power BI',40,'SIM','SIM','SIM');
 --
---registros da tabela 4--
-INSERT INTO CURSOS VALUES
-(993848,'Infraestrutura de Redes',430,'Edgard Simas','Tarde','back-end',77382821),
-(228293,'Desenvolvimento Web Mobile',500,'Daniel Sanches','Manhã','full-stack',77382821),
-(1279182,'Cloud Computing',540,'Bruno Veritas','Manhã','servers',22000049),
-(1212121,'Modelagem para Jogos Eletrônicos',670,'Amanda Caldas','Manhã','back-end',22000049),
-(1231231,'Automação de Sistemas',330,'Denilson Dantas','Tarde','devops',01590944),
-(1234123,'Introdução ao Machine Learning',200,'Daniel Marques','Tarde','inteligência artificial',55558992),
-(2345234,'Soluções para Big Data',290,'Américo Rodrigues','Noite','engenharia de dados',55558992),
-(5674567,'APIs e Integrações',310,'Vítor Moura','Manhã','back-end',55558992),
-(1282890,'Ciberssegurança',490,'Douglas Portugal','Noite','segurança da informação',01590944),
-(2918376,'Swift e Kotlin para Desenvolvimento Mobile',250,'Jean Faria','Manhã','mobile',55558992);
+INSERT INTO curso_modulo VALUES
+(01,5),
+(02,3),
+(03,2),
+(04,5),
+(05,6),
+(06,3),
+(07,1),
+(08,4);
 --
---registros da tabela 5--
-INSERT INTO RELATORIO_TECNOLOGIA VALUES
-(11111,100),
-(22222,200),
-(33333,300),
-(44444,400),
-(77777,500),
-(77777,600),
-(77777,700),
-(88888,800),
-(99999,900),
-(10101,200),
-(11111,200),
-(11111,300),
-(33333,200),
-(44444,600),
-(44444,700),
-(77777,900),
-(77777,100),
-(88888,900),
-(99999,400),
-(11111,400);
+INSERT INTO departamento VALUES
+(111,'pedagógico','Soft'),
+(112,'pedagógico','Hard'),
+(113,'pedagógico','Coordenação'),
+(221,'financeiro','Tesouraria'),
+(222,'financeiro','Contabilidade'),
+(223,'financeiro','Gestão de Contas'),
+(331,'administrativo','Direção'),
+(332,'administrativo','Recursos Humanos'),
+(333,'administrativo','Controle de Qualidade');
 --
---registros da tabela 6--
-INSERT INTO EMPRESA_CURSOS VALUES
-(77382821,993848),
-(77382821,228293),
-(22000049,1279182),
-(22000049,1212121),
-(55558992,1234123),
-(55558992,2345234),
-(55558992,5674567),
-(55558992,2918376),
-(01590944,1231231),
-(01590944,1282890);
+INSERT INTO facilitador VALUES
+(1, 'Thiago Leal', '21984638467', 'thiago@email.com', 'Rua das flores, n. 19',111),
+(2, 'Edgard Simas', '11946458888', 'edgard@email.com', 'Av. Luiz Rosa, n. 255',112),
+(3, 'Sofia Charlote', '12976238743', 'sofia@email.com', 'Rua Fernando Barbosa, n. 450',113),
+(4, 'Fátima Souza', '21964738364', 'fatima@email.com', 'Av. Franco da Silva, n. 210',112),
+(5, 'Bruna Marquelucia', '22984730293', 'bruna@email.com', 'Rua Nova York, n. 95',222),
+(6, 'Fernando Torquatto', '22954368695', 'fernando@email.com', 'Estrada do Galeão, n. 1954',221),
+(7, 'Larissa Manuelle', '21964539287', 'larissa@email.com', 'AV. Brigadeiro Fernando, n. 282',223),
+(8, 'Monique Evandra', '21965836754', 'monique@email.com', 'Rua Professor Eduardo, n. 303',333),
+(9, 'Lucas Meneguel', '21945463254', 'lucas@email.com', 'Alameda do Sol, n. 203',332),
+(10, 'Manuela Marques', '21945472563', 'manuela@email.com', 'Condominio Boa Vista, apt. 512',331);
+--
+INSERT INTO modulo_facilitador VALUES
+(3,1),
+(1,2),
+(2,2),
+(4,1),
+(6,1),
+(6,2),
+(5,1),
+(4,2),
+(2,1),
+(1,4);
 --
 --finalização dos registros--
 ```
