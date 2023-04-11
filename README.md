@@ -21,7 +21,7 @@ Portanto, nosso objetivo se resume em modelar e criar o banco de dados através 
    * **RESILIAConcept.png**: arquivo contendo a imagem do modelo conceitual para a criação do banco de dados;
    * **RESILIALogic.png**: arquivo contendo a imagem do modelo lógico para a criação do banco de dados;
 
-* **README.md**: arquivo que abriga uma breve descrição do projeto com o título, suas funcionalidades, arquivos presentes na pasta do projeto, seus respectivos comandos e informações da equipe responsável pelo desenvolvimento.
+**README.md**: arquivo que abriga uma breve descrição do projeto com o título, suas funcionalidades, arquivos presentes na pasta do projeto, seus respectivos comandos e informações da equipe responsável pelo desenvolvimento.
 
 
 ###########################################################################################################
