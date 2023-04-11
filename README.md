@@ -290,9 +290,9 @@ WHERE facilitador.id_departamento=111 OR facilitador.id_departamento=112;
 
 >>>Davi de Moraes Novaes | Gestão de Conhecimento | isdavimoraes@gmail.com <br>
 >>>Douglas Klem Portugal do Amaral | Gestão de Performance e Revisão | klemdoug@gmail.com <br>
->>>Lenilson dos Reis Barros | Gestão de Comunicação |  <br>
->>>Matheus Augusto de Souza | Gestão de Processos | mataugusto1999@gmail.com; <br>
->>>Stephanie Ferreira Vale | Gestão de P&D | <br>
+>>>Lenilson dos Reis Barros | Gestão de Comunicação | lenilson.lenilsonreis@gmail.com <br>
+>>>Matheus Augusto de Souza | Gestão de Processos | mataugusto1999@gmail.com <br>
+>>>Stephanie Ferreira Vale | Gestão de P&D | stephanief.v@outlook.com <br>
 
 ###########################################################################################################
 
