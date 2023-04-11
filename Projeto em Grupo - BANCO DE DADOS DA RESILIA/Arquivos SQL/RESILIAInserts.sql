@@ -41,7 +41,7 @@ INSERT INTO modulo VALUES
 
 --Feito por Davi
 INSERT INTO curso_modulo VALUES
-(01,1),
+(01,5),
 (02,3),
 (03,2),
 (04,5),
@@ -67,8 +67,8 @@ INSERT INTO facilitador VALUES
 INSERT INTO modulo_facilitador VALUES
 (3,1),
 (1,2),
-(2,4),
-(4,4),
+(2,2),
+(4,1),
 (6,1),
 (6,2),
 (5,1),
