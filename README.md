@@ -16,6 +16,7 @@ Portanto, nosso objetivo se resume em modelar e criar o banco de dados através 
    * **RESILIACreate.sql**: arquivo contendo os comandos para criação do banco de dados;
    * **RESILIAInsert.sql**: arquivo contendo os comandos utilizados para dar carga (registrar), com dados fictícios, no banco de dados;
    * **RESILIAQueries.sql**: arquivo contendo os comandos de query (consultas) SQL que respondem a cada uma das perguntas feitas no projeto.
+>>>Projeto em Grupo - BANCO DE DADOS DA RESILIA/
    >>>Modelo/
    * **RESILIAConcept.png**: arquivo contendo a imagem do modelo conceitual para a criação do banco de dados;
    * **RESILIALogic.png**: arquivo contendo a imagem do modelo lógico para a criação do banco de dados;
