@@ -288,30 +288,14 @@ WHERE facilitador.id_departamento=111 OR facilitador.id_departamento=112;
 
 ## Equipe ##
 
-Davi Novaes; <br>
-Douglas Klem; <br>
-Lenilson Barros; <br>
-Matheus Augusto; <br>
-Stephanie Vale. <br>
-**E-mails para contato:** <br>
-mataugusto1999@gmail.com <br>
+>>> Integrante | Função | Contato <<<
 
-NOME:Davi de Moraes Novaes
-CARGO/FUNÇÃO: Gestão de Conhecimento
-ENTIDADE RESPONSÁVEL(CREATE+INSERT): 
---
-NOME: Douglas Klem Portugal do Amaral
-CARGO/FUNÇÃO: Gestão de Performance e Revisão
-ENTIDADE RESPONSÁVEL(CREATE+INSERT):
---
-NOME: Matheus Augusto de Souza
-CARGO/FUNÇÃO: Gestão de Processos
-ENTIDADE RESPONSÁVEL(CREATE+INSERT):
---
-NOME: Lenilson dos Reis Barros
-CARGO/FUNÇÃO: Gestão de Comunicação
-ENTIDADE RESPONSÁVEL(CREATE+INSERT):
---
-NOME: Stephanie Ferreira Vale
-CARGO/FUNÇÃO: Gestão de P&D
-ENTIDADE RESPONSÁVEL(CREATE+INSERT):
+Davi de Moraes Novaes | Gestão de Conhecimento | isdavimoraes@gmail.com <br>
+Douglas Klem Portugal do Amaral | Gestão de Performance e Revisão | klemdoug@gmail.com <br>
+Lenilson dos Reis Barros | Gestão de Comunicação |  <br>
+Matheus Augusto de Souza | Gestão de Processos | mataugusto1999@gmail.com; <br>
+Stephanie Ferreira Vale | Gestão de P&D | <br>
+
+###########################################################################################################
+
+
