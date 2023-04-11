@@ -1,14 +1,3 @@
-**Projeto em Grupo - Módulo 3** <br>
-Banco de Dados da Resilia. <br><br>
-**Integrantes do grupo** <br>
-Davi Novaes; <br>
-Douglas Klem; <br>
-Lenilson Barros; <br>
-Matheus Augusto; <br>
-Stephanie Vale. <br>
-**E-mails para contato:** <br>
-mataugusto1999@gmail.com <br>
-
 ## Descrição ##
 
 Este repositório (FAD-M3) contém os arquivos utilizados para disponibilizar a infraestrutura necessária para o projeto final em grupo do Módulo 3 (Banco de Dados e Relacionamento Interpessoal) do curso de Formação em Análise de Dados promovido pela parceria SENAC/Resilia.
@@ -20,12 +9,18 @@ Portanto, nosso objetivo se resume em modelar e criar o banco de dados através 
 
 ###########################################################################################################
 
-## Arquivos ##
+## Pastas e Arquivos ##
 
-* **BancoResiliaBD.sql**: arquivo contendo os comandos para criação do banco de dados;
-* **BancoResiliaCargas.sql**: arquivo contendo os comandos utilizados para dar carga (registrar), com dados fictícios, no banco de dados;
-* **BancoResiliaConsultas.sql**: arquivo contendo os comandos de query (consultas) SQL que respondem a cada uma das perguntas feitas no projeto.
-* **README_Indiv2.md**: arquivo que abriga uma breve descrição do projeto com o título, suas funcionalidades, arquivos presentes na pasta do projeto e seus respectivos comandos.
+>>>Projeto em Grupo - BANCO DE DADOS DA RESILIA/
+   >>>Arquivos SQL/
+   * **RESILIACreate.sql**: arquivo contendo os comandos para criação do banco de dados;
+   * **RESILIAInsert.sql**: arquivo contendo os comandos utilizados para dar carga (registrar), com dados fictícios, no banco de dados;
+   * **RESILIAQueries.sql**: arquivo contendo os comandos de query (consultas) SQL que respondem a cada uma das perguntas feitas no projeto.
+   >>>Modelo/
+   * **RESILIAConcept.png**: arquivo contendo a imagem do modelo conceitual para a criação do banco de dados;
+   * **RESILIALogic.png**: arquivo contendo a imagem do modelo lógico para a criação do banco de dados;
+
+* **README.md**: arquivo que abriga uma breve descrição do projeto com o título, suas funcionalidades, arquivos presentes na pasta do projeto, seus respectivos comandos e informações da equipe responsável pelo desenvolvimento.
 
 
 ###########################################################################################################
@@ -256,3 +251,33 @@ WHERE CADASTRO_TECNOLOGIA.Area != 'Dados' AND RELATORIO.Data_Compilacao > '2022-
 
 ###########################################################################################################
 
+
+## Equipe ##
+
+Davi Novaes; <br>
+Douglas Klem; <br>
+Lenilson Barros; <br>
+Matheus Augusto; <br>
+Stephanie Vale. <br>
+**E-mails para contato:** <br>
+mataugusto1999@gmail.com <br>
+
+NOME:Davi de Moraes Novaes
+CARGO/FUNÇÃO: Gestão de Conhecimento
+ENTIDADE RESPONSÁVEL(CREATE+INSERT): 
+--
+NOME: Douglas Klem Portugal do Amaral
+CARGO/FUNÇÃO: Gestão de Performance e Revisão
+ENTIDADE RESPONSÁVEL(CREATE+INSERT):
+--
+NOME: Matheus Augusto de Souza
+CARGO/FUNÇÃO: Gestão de Processos
+ENTIDADE RESPONSÁVEL(CREATE+INSERT):
+--
+NOME: Lenilson dos Reis Barros
+CARGO/FUNÇÃO: Gestão de Comunicação
+ENTIDADE RESPONSÁVEL(CREATE+INSERT):
+--
+NOME: Stephanie Ferreira Vale
+CARGO/FUNÇÃO: Gestão de P&D
+ENTIDADE RESPONSÁVEL(CREATE+INSERT):
