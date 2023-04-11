@@ -1,4 +1,19 @@
--- Feito por Lenilson
+------------------------------------------------------------------
+--  SENAC/RESILIA - Formação em Análise de Dados (FAD)          --
+--  Projeto em Grupo - Módulo 3 - Banco de Dados da Resilia     --
+--  SQL Server Management Studio 19 -*- coding: utf-8 -*-       --
+--  Criado por: Davi de Moraes Novaes, Douglas Klem Portugal do --
+--  Amaral, Matheus Augusto de Souza, Lenilson dos Reis Barros  --
+--  e Stephanie Ferreira Vale                                   --
+--  Data de criação: 10/04/2023                                 --
+--  versão = 6.19(64-bit)                                       --
+------------------------------------------------------------------
+--
+--BANCO DE DADOS DA RESILIA--
+--
+--Início dos registros para popular o banco de dados--
+--
+--Registros da Tabela 1 - Feito pelo Lenilson--
 INSERT INTO aluno VALUES
 (111,'Davi de Moraes Novaes',219484848,'dmoraes@mail.com','Rua Carminha Dutra, n. 500'),
 (222,'Stephanie Ferreira Vale',219456565,'svale@mail.com','Rua Alfredo Raimundo, n. 650'),
@@ -6,8 +21,8 @@ INSERT INTO aluno VALUES
 (444,'Márcio Lorenzo Alves',219837635,'mlorenzo@mail.com','Avenida Coronel Rodapé, n. 171'),
 (555,'Matheus Augusto de Souza',219878787,'mathaugusto@mail.com','Rua José Alves Lima, n. 130'),
 (666,'Lenilson dos Reis Barros',219047574,'lreis@mail.com','Estrada do Portela Nobre, n. 432');
-
---Feito pela Stephanie
+--
+--Registros da Tabela 2 - Feito pela Stephanie--
 INSERT INTO curso VALUES
 (01,'Desenvolvimento Web','Noite'),
 (02,'Ciência da Comunicação','Manhã'),
@@ -17,8 +32,8 @@ INSERT INTO curso VALUES
 (06,'Sistemas de Informação','Tarde'),
 (07,'Análise de Dados','Manhã'),
 (08,'Excel Avançado','Tarde');
-
---Feito pelo Davi
+--
+--Registros da Tabela 3 - Feito pelo Davi--
 INSERT INTO aluno_curso VALUES
 (111,01,'435678',25),
 (222,02,'4567',100),
@@ -29,8 +44,8 @@ INSERT INTO aluno_curso VALUES
 (666,05,'34566',95),
 (111,05,'34533',00),
 (222,01,'23455',65);
-
---Feito por Davi
+--
+--Registros da Tabela 4 - Feito pelo Davi--
 INSERT INTO modulo VALUES
 (1,'Python I',30,'SIM','NAO','NAO'),
 (2,'SQL',20,'SIM','SIM','SIM'),
@@ -38,8 +53,8 @@ INSERT INTO modulo VALUES
 (4,'Lógica de Programação',10,'NAO','NAO','NAO'),
 (5,'Google Collab',25,'SIM','SIM','NAO'),
 (6,'Power BI',40,'SIM','SIM','SIM');
-
---Feito por Davi
+--
+--Registros da Tabela 5 - Feito pelo Davi--
 INSERT INTO curso_modulo VALUES
 (01,5),
 (02,3),
@@ -49,8 +64,20 @@ INSERT INTO curso_modulo VALUES
 (06,3),
 (07,1),
 (08,4);
-
---Feito por Matheus
+--
+--Registros da Tabela 6 - Feito pelo Douglas--
+INSERT INTO departamento VALUES
+(111,'pedagógico','Soft'),
+(112,'pedagógico','Hard'),
+(113,'pedagógico','Coordenação'),
+(221,'financeiro','Tesouraria'),
+(222,'financeiro','Contabilidade'),
+(223,'financeiro','Gestão de Contas'),
+(331,'administrativo','Direção'),
+(332,'administrativo','Recursos Humanos'),
+(333,'administrativo','Controle de Qualidade');
+--
+--Registros da Tabela 7 - Feito pelo Matheus--
 INSERT INTO facilitador VALUES
 (1, 'Thiago Leal', '21984638467', 'thiago@email.com', 'Rua das flores, n. 19',111),
 (2, 'Edgard Simas', '11946458888', 'edgard@email.com', 'Av. Luiz Rosa, n. 255',112),
@@ -62,8 +89,8 @@ INSERT INTO facilitador VALUES
 (8, 'Monique Evandra', '21965836754', 'monique@email.com', 'Rua Professor Eduardo, n. 303',333),
 (9, 'Lucas Meneguel', '21945463254', 'lucas@email.com', 'Alameda do Sol, n. 203',332),
 (10, 'Manuela Marques', '21945472563', 'manuela@email.com', 'Condominio Boa Vista, apt. 512',331);
-
---Feito por Davi
+--
+--Registros da Tabela 8 - Feito pelo Davi--
 INSERT INTO modulo_facilitador VALUES
 (3,1),
 (1,2),
@@ -75,16 +102,8 @@ INSERT INTO modulo_facilitador VALUES
 (4,2),
 (2,1),
 (1,4);
+--
+--finalização dos registros--
+------------------------------------------------------------------
 
---Feito por Douglas
-INSERT INTO departamento VALUES
-(111,'pedagógico','Soft'),
-(112,'pedagógico','Hard'),
-(113,'pedagógico','Coordenação'),
-(221,'financeiro','Tesouraria'),
-(222,'financeiro','Contabilidade'),
-(223,'financeiro','Gestão de Contas'),
-(331,'administrativo','Direção'),
-(332,'administrativo','Recursos Humanos'),
-(333,'administrativo','Controle de Qualidade');
 
