@@ -1,4 +1,4 @@
---Criação da database
+--CriaÃ§Ã£o da database
 CREATE DATABASE RESILIA;
 
 USE RESILIA;
