@@ -205,55 +205,80 @@ INSERT INTO modulo_facilitador VALUES
 Cada consulta seguiu o padrão de busca pelos dados entre as tabelas na ordem 'SELECT <nome_tabela.campo> FROM <nome_tabela> JOIN <nome_tabela2> ON <nome_tabela.campocomum> = <nome_tabela2.campocomum>', variando de acordo com a quantidade de tabelas envolvidas na busca, da localização das respostas e da necessidade de agrupamento e/ou contagem de certos campos (comandos WHERE/GROUP BY/ORDER BY/COUNT p. ex.). As consultas geradas foram feitas para atender às indagações propostas pelo projeto, como pode ser visto abaixo:
 
 ```sql
---BANCO DE DADOS BANCORESILIA--
+-- Consultas obrigatórias para responder as perguntas do escopo do projeto:--
 --
---consultas para as perguntas do escopo do projeto--
+-- 1. Selecionar a quantidade total de estudantes cadastrados no banco.
 --
---1.Qual empresa utiliza o maior número de tecnologias na última pesquisa (2/2022)?
-SELECT CADASTRO_EMPRESA.CNPJ, CADASTRO_EMPRESA.Nome, COUNT(*) AS NUM_TEC
-FROM CADASTRO_EMPRESA
-LEFT JOIN RELATORIO
-ON CADASTRO_EMPRESA.CNPJ = RELATORIO.CNPJ
-LEFT JOIN RELATORIO_TECNOLOGIA
-ON RELATORIO.ID_Relatorio = RELATORIO_TECNOLOGIA.ID_Relatorio
-WHERE RELATORIO.Data_Compilacao >= '2022-07-01' AND RELATORIO.Data_Compilacao <= '2022-12-31'
-GROUP BY CADASTRO_EMPRESA.CNPJ, CADASTRO_EMPRESA.Nome
-ORDER BY NUM_TEC DESC
-LIMIT 1;
+SELECT COUNT(*) AS Total_de_Alunos FROM aluno;
 --
---2. Qual empresa utilizava o menor número de tecnologias na pesquisa anterior (1/2022)?
-SELECT CADASTRO_EMPRESA.CNPJ, CADASTRO_EMPRESA.Nome, COUNT(*) AS NUM_TEC
-FROM CADASTRO_EMPRESA
-LEFT JOIN RELATORIO
-ON CADASTRO_EMPRESA.CNPJ = RELATORIO.CNPJ
-LEFT JOIN RELATORIO_TECNOLOGIA
-ON RELATORIO.ID_Relatorio = RELATORIO_TECNOLOGIA.ID_Relatorio
-WHERE RELATORIO.Data_Compilacao >= '2022-01-01' AND RELATORIO.Data_Compilacao <= '2022-06-30'
-GROUP BY CADASTRO_EMPRESA.CNPJ, CADASTRO_EMPRESA.Nome
-ORDER BY NUM_TEC ASC
-LIMIT 1;
+-- 2. Selecionar todos os estudantes com os respectivos cursos nos quais eles estão cadastrados.
 --
---3. Quantas empresas utilizam tecnologias da área de “Dados” atualmente?
-SELECT COUNT (CADASTRO_EMPRESA.CNPJ)
-FROM CADASTRO_EMPRESA
-LEFT JOIN RELATORIO
-ON CADASTRO_EMPRESA.CNPJ = RELATORIO.CNPJ
-LEFT JOIN RELATORIO_TECNOLOGIA 
-ON RELATORIO.ID_Relatorio = RELATORIO_TECNOLOGIA.ID_Relatorio
-LEFT JOIN CADASTRO_TECNOLOGIA 
-ON RELATORIO_TECNOLOGIA.ID_Cad_Tec = CADASTRO_TECNOLOGIA.ID_Cad_Tec
-WHERE CADASTRO_TECNOLOGIA.Area = 'Dados' AND RELATORIO.Data_Compilacao > '2022-07-01';
+SELECT aluno.nome AS Alunos, curso.nome As Cursos
+FROM aluno
+INNER JOIN aluno_curso
+ON aluno.id_aluno = aluno_curso.id_aluno
+INNER JOIN curso
+ON aluno_curso.id_curso = curso.id_curso
+ORDER BY aluno.nome;
 --
---4. Quantas empresas utilizam tecnologias que não são da área de “Dados” atualmente?
-SELECT COUNT (DISTINCT CADASTRO_EMPRESA.CNPJ)
-FROM CADASTRO_EMPRESA
-lEFT JOIN RELATORIO
-ON CADASTRO_EMPRESA.CNPJ = RELATORIO.CNPJ
-LEFT JOIN RELATORIO_TECNOLOGIA 
-ON RELATORIO.ID_Relatorio = RELATORIO_TECNOLOGIA.ID_Relatorio
-LEFT JOIN CADASTRO_TECNOLOGIA 
-ON RELATORIO_TECNOLOGIA.ID_Cad_Tec = CADASTRO_TECNOLOGIA.ID_Cad_Tec
-WHERE CADASTRO_TECNOLOGIA.Area != 'Dados' AND RELATORIO.Data_Compilacao > '2022-07-01';
+-- 3. Selecionar quais pessoas facilitadoras atuam em mais de uma turma.
+--
+SELECT DISTINCT facilitador.nome AS Facilitadores
+FROM facilitador
+RIGHT JOIN modulo_facilitador
+ON facilitador.id_facilitador = modulo_facilitador.id_facilitador
+RIGHT JOIN modulo
+ON modulo_facilitador.id_modulo = modulo.id_modulo
+RIGHT JOIN curso_modulo
+ON modulo.id_modulo = curso_modulo.id_modulo
+RIGHT JOIN curso
+ON curso_modulo.id_curso = curso.id_curso
+GROUP BY facilitador.nome
+HAVING COUNT(curso.id_curso) >1;
+--
+--
+-- Consultas Estratégicas para responder questionamentos criativos e pertinentes ao projeto que--
+-- foram gerados pela equipe:--
+--
+-- 1. Retorne os nomes dos alunos com frequência igual ou superior a 95% no curso e a carga horária
+-- dos respectivos módulos.
+--
+SELECT aluno.nome AS Alunos, modulo.cargahoraria AS Carga_Horária_Módulo
+FROM aluno
+INNER JOIN aluno_curso
+ON aluno.id_aluno = aluno_curso.id_aluno
+INNER JOIN curso
+ON aluno_curso.id_curso = curso.id_curso
+INNER JOIN curso_modulo
+ON curso.id_curso = curso_modulo.id_curso
+INNER JOIN modulo
+ON curso_modulo.id_modulo = modulo.id_modulo
+WHERE aluno_curso.frequencia_porcent >=95;
+--
+-- 2. Retorne os nomes dos alunos que realizaram as entregas de todos os projetos requeridos e
+-- os nomes dos respectivos cursos desses projetos.
+--
+SELECT aluno.nome AS Alunos, modulo.proj_ind1 AS Projeto_Individual_1,
+modulo.proj_ind2 AS Projeto_Individual_2, modulo.proj_grup AS Projeto_Grupo, curso.nome AS Turma
+FROM aluno
+INNER JOIN aluno_curso
+ON aluno.id_aluno = aluno_curso.id_aluno
+INNER JOIN curso
+ON aluno_curso.id_curso = curso.id_curso
+INNER JOIN curso_modulo
+ON curso.id_curso = curso_modulo.id_curso
+INNER JOIN modulo
+ON curso_modulo.id_modulo = modulo.id_modulo
+WHERE modulo.proj_ind1='SIM' AND modulo.proj_ind2='SIM' AND modulo.proj_grup='SIM';
+--
+-- 3. Retorne o nome dos facilitadores alocados no departamento pedagógico que não
+-- são coordenadores. Diga, também, quais os setores ligados a esses facilitadores.
+--
+SELECT facilitador.nome AS Facilitadores, departamento.nome AS Departamento, departamento.setor AS Setores
+FROM facilitador
+LEFT JOIN departamento
+ON facilitador.id_departamento = departamento.id_departamento
+WHERE facilitador.id_departamento=111 OR facilitador.id_departamento=112;
 --
 --finalização das consultas--
 ```
