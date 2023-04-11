@@ -202,7 +202,7 @@ INSERT INTO modulo_facilitador VALUES
 
 ### * 3: Consultas feitas ao Banco de Dados ###
 
-Cada consulta seguiu o padrão de busca pelos dados entre as tabelas na ordem 'SELECT <nome_tabela.campo> FROM <nome_tabela> JOIN <nome_tabela2> ON <nome_tabela.campocomum> = <nome_tabela2.campocomum>', variando de acordo com a quantidade de tabelas envolvidas na busca, da localização das respostas e da necessidade de agrupamento e/ou contagem de certos campos (comandos WHERE/GROUP BY/ORDER BY/COUNT p. ex.). As consultas geradas foram feitas para atender às indagações propostas pelo projeto, como pode ser visto abaixo:
+Cada consulta seguiu o padrão de busca pelos dados entre as tabelas na ordem 'SELECT <nome_tabela.campo> AS <nome_alias> FROM <nome_tabela> JOIN <nome_tabela2> ON <nome_tabela.campocomum> = <nome_tabela2.campocomum>', variando de acordo com a quantidade de tabelas envolvidas na busca, da localização das respostas e da necessidade de agrupamento e/ou contagem de certos campos (comandos WHERE/GROUP BY/ORDER BY/COUNT/HAVING p. ex.).
 
 ```sql
 -- Consultas obrigatórias para responder as perguntas do escopo do projeto:--
