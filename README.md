@@ -293,7 +293,7 @@ WHERE facilitador.id_departamento=111 OR facilitador.id_departamento=112;
 >>>Matheus Augusto de Souza | Gestão de Processos | mataugusto1999@gmail.com <br>
 >>>Stephanie Ferreira Vale | Gestão de P&D | stephanief.v@outlook.com <br>
 
-[Link de acesso para a apresentação do projeto.](https://docs.google.com/presentation/d/1PZGwRBewzz8JinpJPPa4SI7j1kM36FNh8figh2incY8/edit?usp=sharing).
+[Link de acesso para a apresentação do projeto](https://docs.google.com/presentation/d/1PZGwRBewzz8JinpJPPa4SI7j1kM36FNh8figh2incY8/edit?usp=sharing).
 
 ###########################################################################################################
 
